@@ -21,11 +21,11 @@ impl Card {
         //     FightResult::Draw
         // }
 
-        match(self.damage>= other.health, other.damage >= self.health){
-            (true,true) =>FightResult::Tie,
-            (true,false) => FightResult::Win,
-            (false,true) => FightResult::Loss,
-            (false,false) => FightResult::Draw,
+        match (self.damage >= other.health, other.damage >= self.health) {
+            (true, true) => FightResult::Tie,
+            (true, false) => FightResult::Win,
+            (false, true) => FightResult::Loss,
+            (false, false) => FightResult::Draw,
         }
     }
 
